@@ -1,0 +1,70 @@
+{
+  "name": "spartanbot",
+  "version": "0.8.15",
+  "description": "Defend the Network",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "compile": "npx babel src --out-dir lib",
+    "test": "jest --verbose",
+    "prepare": "npm run generate-docs && npm run compile",
+    "generate-docs": "node_modules/.bin/jsdoc --readme ./README.md -c jsdoc.json",
+    "start": "npx babel-node src/main",
+    "dev": "nodemon lib/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truedev08/spartanbot-truedev.git"
+  },
+  "author": "Truedev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oipwg/spartanbot/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "jsdoc": "^3.6.3",
+    "jsdoc-template": "git+https://github.com/oipwg/jsdoc-template.git",
+    "rimraf": "^2.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/node": "^7.12.6",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "homepage": "https://github.com/oipwg/spartanbot#readme",
+  "dependencies": {
+    "@oipwg/exchange-rate": "^2.0.0-beta.1",
+    "bn.js": "^5.1.1",
+    "dotenv": "^8.2.0",
+    "eventemitter3": "^4.0.7",
+    "lodash": "^4.17.15",
+    "lodash.combinations": "^18.9.19",
+    "market-rental-stats": "^4.0.0",
+    "miningrigrentals-api-v2": "git+https://github.com/oipwg/miningrigrentals-api-v2.git",
+    "moment": "^2.24.0",
+    "nicehash-api": "git+https://github.com/truedev08/nicehash-api-truedev.git",
+    "node-fetch": "^2.6.0",
+    "node-localstorage": "^2.1.6",
+    "oip-account": "^1.4.1",
+    "spartansense": "git+https://github.com/oipwg/SpartanSense.git",
+    "uid": "1.0.0"
+  },
+  "files": [
+    "lib"
+  ]
+}

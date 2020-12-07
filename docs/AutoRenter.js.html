@@ -1,0 +1,666 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+      AutoRenter.js - Documentation
+  </title>
+
+  <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+  <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+  <link type="text/css" rel="stylesheet" href="styles/monokai-sublime.css">
+
+  
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+  0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+  mixpanel.init("1919205b2da72e4da3b9b6639b444d59");</script>
+  <!-- end Mixpanel -->
+</head>
+
+<body>
+  <svg style="display: none;">
+    <defs>
+      <symbol id="linkIcon" fill="#706d77" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger" class="navicon-button x">
+    <div class="navicon"></div>
+  </label>
+
+  <label for="nav-trigger" class="overlay"></label>
+
+  <div class="top-nav-wrapper">
+    <ul>
+      <li >
+        <a href="index.html">
+          
+            <svg fill="#6D6D6D" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          
+          
+        </a>
+      </li>
+
+      
+
+    </ul>
+  </div>
+
+  <nav>
+    <h3 class="reference-title">
+      SpartanBot
+    </h3>
+
+    <h3>Classes</h3><ul><li id="AutoRenter-nav"><a href="AutoRenter.html">AutoRenter</a><ul class='methods'><li data-type="method" id="AutoRenter-cutoffRental-nav"><a href="AutoRenter.html#cutoffRental">cutoffRental</a></li><li data-type="method" id="AutoRenter-mrrRentPreprocess-nav"><a href="AutoRenter.html#mrrRentPreprocess">mrrRentPreprocess</a></li><li data-type="method" id="AutoRenter-rent-nav"><a href="AutoRenter.html#rent">rent</a></li><li data-type="method" id="AutoRenter-rentPreprocess-nav"><a href="AutoRenter.html#rentPreprocess">rentPreprocess</a></li><li data-type="method" id="AutoRenter-rentSelector-nav"><a href="AutoRenter.html#rentSelector">rentSelector</a></li></ul></li><li id="MRRProvider-nav"><a href="MRRProvider.html">MRRProvider</a><ul class='methods'><li data-type="method" id="MRRProvider-getType-nav"><a href="MRRProvider.html#.getType">getType</a></li><li data-type="method" id="MRRProvider-_createPool-nav"><a href="MRRProvider.html#_createPool">_createPool</a></li><li data-type="method" id="MRRProvider-_getBalance-nav"><a href="MRRProvider.html#_getBalance">_getBalance</a></li><li data-type="method" id="MRRProvider-_getBalances-nav"><a href="MRRProvider.html#_getBalances">_getBalances</a></li><li data-type="method" id="MRRProvider-_getPools-nav"><a href="MRRProvider.html#_getPools">_getPools</a></li><li data-type="method" id="MRRProvider-_rent-nav"><a href="MRRProvider.html#_rent">_rent</a></li><li data-type="method" id="MRRProvider-_returnActivePool-nav"><a href="MRRProvider.html#_returnActivePool">_returnActivePool</a></li><li data-type="method" id="MRRProvider-_setActivePool-nav"><a href="MRRProvider.html#_setActivePool">_setActivePool</a></li><li data-type="method" id="MRRProvider-_testAuthorization-nav"><a href="MRRProvider.html#_testAuthorization">_testAuthorization</a></li><li data-type="method" id="MRRProvider-addPoolProfiles-nav"><a href="MRRProvider.html#addPoolProfiles">addPoolProfiles</a></li><li data-type="method" id="MRRProvider-addPoolToProfile-nav"><a href="MRRProvider.html#addPoolToProfile">addPoolToProfile</a></li><li data-type="method" id="MRRProvider-createPoolAndProfile-nav"><a href="MRRProvider.html#createPoolAndProfile">createPoolAndProfile</a></li><li data-type="method" id="MRRProvider-createPoolProfile-nav"><a href="MRRProvider.html#createPoolProfile">createPoolProfile</a></li><li data-type="method" id="MRRProvider-deletePoolProfile-nav"><a href="MRRProvider.html#deletePoolProfile">deletePoolProfile</a></li><li data-type="method" id="MRRProvider-getAccount-nav"><a href="MRRProvider.html#getAccount">getAccount</a></li><li data-type="method" id="MRRProvider-getAlgo-nav"><a href="MRRProvider.html#getAlgo">getAlgo</a></li><li data-type="method" id="MRRProvider-getInternalType-nav"><a href="MRRProvider.html#getInternalType">getInternalType</a></li><li data-type="method" id="MRRProvider-getPoolProfiles-nav"><a href="MRRProvider.html#getPoolProfiles">getPoolProfiles</a></li><li data-type="method" id="MRRProvider-getProfileID-nav"><a href="MRRProvider.html#getProfileID">getProfileID</a></li><li data-type="method" id="MRRProvider-getRentalCost-nav"><a href="MRRProvider.html#getRentalCost">getRentalCost</a></li><li data-type="method" id="MRRProvider-getRigsToRent-nav"><a href="MRRProvider.html#getRigsToRent">getRigsToRent</a></li><li data-type="method" id="MRRProvider-getTotalHashPower-nav"><a href="MRRProvider.html#getTotalHashPower">getTotalHashPower</a></li><li data-type="method" id="MRRProvider-getTransactions-nav"><a href="MRRProvider.html#getTransactions">getTransactions</a></li><li data-type="method" id="MRRProvider-returnActivePoolProfile-nav"><a href="MRRProvider.html#returnActivePoolProfile">returnActivePoolProfile</a></li><li data-type="method" id="MRRProvider-returnPoolProfiles-nav"><a href="MRRProvider.html#returnPoolProfiles">returnPoolProfiles</a></li><li data-type="method" id="MRRProvider-setActivePoolProfile-nav"><a href="MRRProvider.html#setActivePoolProfile">setActivePoolProfile</a></li><li data-type="method" id="MRRProvider-setPoolProfiles-nav"><a href="MRRProvider.html#setPoolProfiles">setPoolProfiles</a></li><li data-type="method" id="MRRProvider-updatePool-nav"><a href="MRRProvider.html#updatePool">updatePool</a></li><li data-type="method" id="MRRProvider-updatePoolOnProfile-nav"><a href="MRRProvider.html#updatePoolOnProfile">updatePoolOnProfile</a></li></ul></li><li id="RentalProvider-nav"><a href="RentalProvider.html">RentalProvider</a><ul class='methods'><li data-type="method" id="RentalProvider-getType-nav"><a href="RentalProvider.html#.getType">getType</a></li><li data-type="method" id="RentalProvider-addActiveRigs-nav"><a href="RentalProvider.html#addActiveRigs">addActiveRigs</a></li><li data-type="method" id="RentalProvider-addPools-nav"><a href="RentalProvider.html#addPools">addPools</a></li><li data-type="method" id="RentalProvider-cancelRental-nav"><a href="RentalProvider.html#cancelRental">cancelRental</a></li><li data-type="method" id="RentalProvider-createPool-nav"><a href="RentalProvider.html#createPool">createPool</a></li><li data-type="method" id="RentalProvider-deletePool-nav"><a href="RentalProvider.html#deletePool">deletePool</a></li><li data-type="method" id="RentalProvider-fetchAndSetActiveRigs-nav"><a href="RentalProvider.html#fetchAndSetActiveRigs">fetchAndSetActiveRigs</a></li><li data-type="method" id="RentalProvider-getActiveRigs-nav"><a href="RentalProvider.html#getActiveRigs">getActiveRigs</a></li><li data-type="method" id="RentalProvider-getBalances-nav"><a href="RentalProvider.html#getBalances">getBalances</a></li><li data-type="method" id="RentalProvider-getInternalType-nav"><a href="RentalProvider.html#getInternalType">getInternalType</a></li><li data-type="method" id="RentalProvider-getOrders-nav"><a href="RentalProvider.html#getOrders">getOrders</a></li><li data-type="method" id="RentalProvider-getPool-nav"><a href="RentalProvider.html#getPool">getPool</a></li><li data-type="method" id="RentalProvider-getPools-nav"><a href="RentalProvider.html#getPools">getPools</a></li><li data-type="method" id="RentalProvider-rent-nav"><a href="RentalProvider.html#rent">rent</a></li><li data-type="method" id="RentalProvider-returnActivePool-nav"><a href="RentalProvider.html#returnActivePool">returnActivePool</a></li><li data-type="method" id="RentalProvider-returnActiveRigs-nav"><a href="RentalProvider.html#returnActiveRigs">returnActiveRigs</a></li><li data-type="method" id="RentalProvider-returnPools-nav"><a href="RentalProvider.html#returnPools">returnPools</a></li><li data-type="method" id="RentalProvider-serialize-nav"><a href="RentalProvider.html#serialize">serialize</a></li><li data-type="method" id="RentalProvider-setActivePool-nav"><a href="RentalProvider.html#setActivePool">setActivePool</a></li><li data-type="method" id="RentalProvider-setActiveRigs-nav"><a href="RentalProvider.html#setActiveRigs">setActiveRigs</a></li><li data-type="method" id="RentalProvider-setPools-nav"><a href="RentalProvider.html#setPools">setPools</a></li><li data-type="method" id="RentalProvider-testAuthorization-nav"><a href="RentalProvider.html#testAuthorization">testAuthorization</a></li><li data-type="method" id="RentalProvider-updatePool-nav"><a href="RentalProvider.html#updatePool">updatePool</a></li></ul></li><li id="SpartanBot-nav"><a href="SpartanBot.html">SpartanBot</a><ul class='methods'><li data-type="method" id="SpartanBot-_setPools-nav"><a href="SpartanBot.html#_setPools">_setPools</a></li><li data-type="method" id="SpartanBot-clearReceipts-nav"><a href="SpartanBot.html#clearReceipts">clearReceipts</a></li><li data-type="method" id="SpartanBot-createPool-nav"><a href="SpartanBot.html#createPool">createPool</a></li><li data-type="method" id="SpartanBot-createPoolProfile-nav"><a href="SpartanBot.html#createPoolProfile">createPoolProfile</a></li><li data-type="method" id="SpartanBot-deletePool-nav"><a href="SpartanBot.html#deletePool">deletePool</a></li><li data-type="method" id="SpartanBot-deletePoolProfile-nav"><a href="SpartanBot.html#deletePoolProfile">deletePoolProfile</a></li><li data-type="method" id="SpartanBot-deleteRentalProvider-nav"><a href="SpartanBot.html#deleteRentalProvider">deleteRentalProvider</a></li><li data-type="method" id="SpartanBot-getPool-nav"><a href="SpartanBot.html#getPool">getPool</a></li><li data-type="method" id="SpartanBot-getPoolProfiles-nav"><a href="SpartanBot.html#getPoolProfiles">getPoolProfiles</a></li><li data-type="method" id="SpartanBot-getPools-nav"><a href="SpartanBot.html#getPools">getPools</a></li><li data-type="method" id="SpartanBot-getRentalProviders-nav"><a href="SpartanBot.html#getRentalProviders">getRentalProviders</a></li><li data-type="method" id="SpartanBot-getRentalStrategies-nav"><a href="SpartanBot.html#getRentalStrategies">getRentalStrategies</a></li><li data-type="method" id="SpartanBot-getSetting-nav"><a href="SpartanBot.html#getSetting">getSetting</a></li><li data-type="method" id="SpartanBot-getSettings-nav"><a href="SpartanBot.html#getSettings">getSettings</a></li><li data-type="method" id="SpartanBot-getSupportedRentalProviders-nav"><a href="SpartanBot.html#getSupportedRentalProviders">getSupportedRentalProviders</a></li><li data-type="method" id="SpartanBot-getWalletBalance-nav"><a href="SpartanBot.html#getWalletBalance">getWalletBalance</a></li><li data-type="method" id="SpartanBot-manualRent-nav"><a href="SpartanBot.html#manualRent">manualRent</a></li><li data-type="method" id="SpartanBot-removeReceipts-nav"><a href="SpartanBot.html#removeReceipts">removeReceipts</a></li><li data-type="method" id="SpartanBot-returnPoolProfiles-nav"><a href="SpartanBot.html#returnPoolProfiles">returnPoolProfiles</a></li><li data-type="method" id="SpartanBot-returnPools-nav"><a href="SpartanBot.html#returnPools">returnPools</a></li><li data-type="method" id="SpartanBot-returnReceipts-nav"><a href="SpartanBot.html#returnReceipts">returnReceipts</a></li><li data-type="method" id="SpartanBot-saveReceipt-nav"><a href="SpartanBot.html#saveReceipt">saveReceipt</a></li><li data-type="method" id="SpartanBot-setSetting-nav"><a href="SpartanBot.html#setSetting">setSetting</a></li><li data-type="method" id="SpartanBot-setupListeners-nav"><a href="SpartanBot.html#setupListeners">setupListeners</a></li><li data-type="method" id="SpartanBot-setupRentalProvider-nav"><a href="SpartanBot.html#setupRentalProvider">setupRentalProvider</a></li><li data-type="method" id="SpartanBot-setupRentalStrategy-nav"><a href="SpartanBot.html#setupRentalStrategy">setupRentalStrategy</a></li><li data-type="method" id="SpartanBot-spotRental-nav"><a href="SpartanBot.html#spotRental">spotRental</a></li><li data-type="method" id="SpartanBot-updatePool-nav"><a href="SpartanBot.html#updatePool">updatePool</a></li><li data-type="method" id="SpartanBot-withdrawFromWallet-nav"><a href="SpartanBot.html#withdrawFromWallet">withdrawFromWallet</a></li></ul></li></ul>
+  </nav>
+
+  <div id="main">
+    
+      <h1 class="page-title">
+        AutoRenter.js
+      </h1>
+    
+
+    
+      
+
+<section>
+  <article>
+    <pre class="prettyprint source linenums"><code>import Exchange from '@oipwg/exchange-rate';
+import uid from 'uid'
+
+const NiceHash = "NiceHash"
+const MiningRigRentals = "MiningRigRentals"
+
+import {toNiceHashPrice} from "./util";
+import {ERROR, NORMAL, WARNING, LOW_BALANCE, LOW_HASHRATE, CUTOFF, RECEIPT} from "./constants";
+
+/**
+ * Manages Rentals of Miners from multiple API's
+ */
+class AutoRenter {
+	/**
+	 * [constructor description]
+	 * @param  {Object} settings - The Options for the AutoRenter
+	 * @param  {Array.&lt;RentalProvider>} settings.rental_providers - The Rental Providers that you wish to use to rent miners.
+	 * @return {Boolean}
+	 */
+	constructor(settings) {
+		this.settings = settings
+		this.rental_providers = settings.rental_providers
+		this.exchange = new Exchange();
+	}
+
+	/**
+	 * Preprocess Rent for MiningRigRental Providers
+	 * @param {Object} options - The Options for the rental operation
+	 * @param {Number} options.hashrate - The amount of Hashrate you wish to rent
+	 * @param {Number} options.duration - The duration (in seconds) that you wish to rent hashrate for
+	 * @returns {Promise&lt;Object|Array.&lt;Object>>}
+	 */
+	async mrrRentPreprocess(options) {
+		//ToDo: make sure providers profileIDs aren't the same
+		//get available rigs based on hashpower and duration
+		let _provider;
+		let mrr_providers = []
+		for (let provider of this.rental_providers) {
+			if (provider.getInternalType() === "MiningRigRentals") {
+				_provider = provider
+				mrr_providers.push(provider)
+			}
+		}
+		if (!_provider)
+			return {status: ERROR, success: false, message: 'No MRR Providers'}
+
+		let rigs_to_rent = [];
+		try {
+			rigs_to_rent = await _provider.getRigsToRent(options.hashrate, options.duration)
+		} catch (err) {
+			return {status: ERROR, market: MiningRigRentals, message: 'failed to fetch rigs from API', err}
+		}
+
+		//divvy up providers and create Provider object
+		let providers = [], totalBalance = 0;
+		for (let provider of mrr_providers) {
+			//get the balance of each provider
+			let balance
+			try {
+				balance = await provider.getBalance()
+			} catch (err) {
+				throw new Error(`Failed to get MRR balance: ${err}`)
+			}
+			if (isNaN(balance) &amp;&amp; !balance.success) {
+				return {status: ERROR, success: false, message: "Failed to get balance from API", error: balance}
+			}
+
+			totalBalance += balance
+			//get the profile id needed to rent for each provider
+			let profile = provider.returnActivePoolProfile() || await provider.getProfileID();
+			providers.push({
+				balance,
+				profile,
+				rigs_to_rent: [],
+				uid: provider.getUID(),
+				provider
+			})
+		}
+
+		let hashrate_found = _provider.getTotalHashPower(rigs_to_rent)
+		let cost_found = _provider.getRentalCost(rigs_to_rent)
+
+		let hashratePerc = options.hashrate * .10
+		let hashrateMin = options.hashrate - hashratePerc
+
+		// console.log("total hashpower: ", hashpower_found)
+		// console.log("total cost: ", cost_found)
+
+		// ToDo: Consider not splitting the work up evenly and fill each to his balance first come first serve
+		//load up work equally between providers. 1 and 1 and 1 and 1, etc
+		let iterator = 0; //iterator is the index of the provider while, 'i' is the index of the rigs
+		let len = providers.length
+		for (let i = 0; i &lt; rigs_to_rent.length; i++) {
+			if (i === len || iterator === len) {
+				iterator = 0
+			}
+			providers[iterator].rigs_to_rent.push(rigs_to_rent[i])
+			iterator += 1
+		}
+
+		//remove from each provider rigs (s)he cannot afford
+		let extra_rigs = []
+		for (let p of providers) {
+			let rental_cost = _provider.getRentalCost(p.rigs_to_rent);
+
+			if (p.balance &lt; rental_cost) {
+				while (p.balance &lt; rental_cost &amp;&amp; p.rigs_to_rent.length > 0) {
+					// console.log(`balance: ${p.balance}\nRental cost: ${rental_cost}\nOver Under: ${p.balance-rental_cost}\nAmount substracted -${p.rigs_to_rent[0].btc_price}\nLeft Over: ${rental_cost-p.rigs_to_rent[0].btc_price}`)
+					let tmpRig;
+					[tmpRig] = p.rigs_to_rent.splice(0, 1)
+					extra_rigs.push(tmpRig)
+
+					rental_cost = _provider.getRentalCost(p.rigs_to_rent)
+				}
+			}
+		}
+
+		//add up any additional rigs that a provider may have room for
+		for (let p of providers) {
+			let rental_cost = _provider.getRentalCost(p.rigs_to_rent);
+			if (p.balance > rental_cost) {
+				for (let i = extra_rigs.length - 1; i >= 0; i--) {
+					if ((extra_rigs[i].btc_price + rental_cost) &lt;= p.balance) {
+						let tmpRig;
+						[tmpRig] = extra_rigs.splice(i, 1);
+						p.rigs_to_rent.push(tmpRig)
+						rental_cost = _provider.getRentalCost(p.rigs_to_rent);
+					}
+				}
+			}
+		}
+
+		let providerBadges = []
+		for (let p of providers) {
+			let status = {status: NORMAL}
+
+			p.provider.setActivePoolProfile(p.profile)
+			for (let rig of p.rigs_to_rent) {
+				rig.rental_info.profile = p.profile
+			}
+
+			let price = 0, limit = 0, amount = 0, duration = options.duration;
+			amount += p.provider.getRentalCost(p.rigs_to_rent)
+			limit += (p.provider.getTotalHashPower(p.rigs_to_rent) / 1000 / 1000)
+			price = toNiceHashPrice(amount, limit, duration)
+			let market = MiningRigRentals
+			let balance = p.balance
+
+			if (cost_found > balance) {
+				status.status = WARNING
+				status.type = LOW_BALANCE
+				if (hashrate_found &lt; hashrateMin) {
+					status.warning = LOW_HASHRATE
+					status.message = `Can only find ${((hashrate_found / options.hashrate) * 100).toFixed(2)}% of the hashrate desired`
+				}
+			} else if (p.rigs_to_rent.length === 0) {
+				status.status = ERROR
+				status.type = "NO_RIGS_FOUND"
+			}
+
+			providerBadges.push({
+				market,
+				status,
+				amount,
+				totalHashesTH: limit * 60 * 60 * duration,
+				hashesDesiredTH: (options.hashrate / 1000 / 1000) * 60 * 60 * options.duration,
+				duration,
+				limit,
+				price,
+				balance,
+				query: {
+					hashrate_found,
+					cost_found,
+					duration: options.duration
+				},
+				uid: p.uid,
+				rigs: p.rigs_to_rent,
+				provider: p.provider
+			})
+		}
+		if (providerBadges.length === 1) {
+			return {success: true, badges: providerBadges[0]}
+		} else {
+			return {success: true, badges: providerBadges}
+		}
+	}
+
+	/**
+	 * Rent an amount of hashrate for a period of time
+	 * @param {Object} options - The Options for the rental operation
+	 * @param {Number} options.hashrate - The amount of Hashrate you wish to rent
+	 * @param {Number} options.duration - The duration (IN SECONDS) that you wish to rent hashrate for
+	 * @return {Promise&lt;Object>} Returns a Promise that will resolve to an Object containing info about the rental made
+	 */
+	async rentPreprocess(options) {
+		let mrrProviders = []
+		let nhProviders = []
+
+		for (let provider of this.rental_providers) {
+			if (provider.getInternalType() === NiceHash) {
+				nhProviders.push(provider)
+			}
+			if (provider.getInternalType() === MiningRigRentals) {
+				mrrProviders.push(provider)
+			}
+		}
+
+		let badges = []
+
+		if (mrrProviders.length >= 1) {
+			let mrrPreprocess = await this.mrrRentPreprocess(options)
+			if (!mrrPreprocess.success) {
+				return mrrPreprocess
+			} else {
+				if (Array.isArray(mrrPreprocess.badges)) {
+					for (let badge of mrrPreprocess.badges) {
+						badges.push(badge)
+					}
+				} else {
+					badges.push(mrrPreprocess.badges)
+				}
+			}
+
+		}
+
+		for (let prov of nhProviders) {
+			badges.push(await prov.preprocessRent(options.hashrate, options.duration))
+		}
+		// console.log("badge results: ", badges)
+
+		let usable_badges = []
+		let error_badges = []
+
+		for (let badge of badges) {
+			switch (badge.status.status) {
+				case NORMAL:
+					usable_badges.push(badge)
+					break
+				case WARNING:
+					if (badge.status.type === CUTOFF) {
+						//if cutoff, make a copy of it to be used as a cutoff
+						let cutoffBadge = {...badge}
+						cutoffBadge.cutoff = true
+						usable_badges.push(cutoffBadge)
+						//the original badge, mark as an extension and push that
+						badge.extension = true
+						usable_badges.push(badge)
+					} else {
+						if (badge.status.type === LOW_BALANCE)
+							badge.low_balance = true
+						//these will be your LOW_BALANCE badges
+						usable_badges.push(badge)
+					}
+					break
+				case ERROR:
+					error_badges.push(badge)
+					break
+			}
+		}
+
+		if (usable_badges.length === 0 &amp;&amp; error_badges > 0) {
+			return {status: ERROR, badges: error_badges}
+		} else {
+			//give each badge a unique id other than the provider id (uid)
+			let normalBadges = 0
+			let warningBadges = 0
+			for (let badge of usable_badges) {
+				if (badge.status.status === NORMAL)
+					normalBadges++
+				if (badge.status.status === WARNING)
+					warningBadges++
+				badge.id = uid()
+			}
+			if (warningBadges > 0 )
+				return {status: WARNING, badges: usable_badges}
+			return {status: NORMAL, badges: usable_badges}
+		}
+	}
+
+	/**
+	 * Selects the best rental options from the returned preprocess function
+	 * @param {Object} preprocess - the returned object from manualRentPreprocess()
+	 * @param {Object} options - options passed down into manualRent func (hashrate, duration)
+	 * @returns {Promise&lt;{Object}>}
+	 */
+	async rentSelector(preprocess, options) {
+		let badges = preprocess.badges
+		const totalHashesDesired = (options.hashrate / 1000 / 1000) * 60 * 60 * options.duration
+
+		let normal_badges = []
+		let warning_badges = []
+		for (let badge of badges) {
+			if (badge.status.status === NORMAL) {
+				normal_badges.push(badge)
+			} else if (badge.status.status === WARNING) {
+				warning_badges.push(badge)
+			}
+		}
+
+		// console.log('normal badges: ', normal_badges)
+		// console.log('warning badges: ', warning_badges)
+
+		const limitTH = options.hashrate / 1000 / 1000
+
+
+		if (normal_badges.length > 0) {
+			let best_badge = {}
+			let amount = 1000000
+			for (let badge of normal_badges) {
+				if (badge.amount &lt; amount) {
+					amount = badge.amount
+					best_badge = badge
+				}
+			}
+
+			let limit10Perc = limitTH * 0.10
+			let minLimit = limitTH - limit10Perc
+			if (best_badge.limit > minLimit)
+				return best_badge
+
+			let selected_badges = [best_badge]
+			let hashes = 0
+			if (best_badge.totalHashes &lt; totalHashesDesired) {
+				hashes += best_badge.totalHashes
+				for (let badge of normal_badges) {
+					if ((badge.totalHashes + hashes) &lt;= totalHashesDesired) {
+						selected_badges.push(badge)
+						hashes += badge.totalHashes
+					}
+				}
+			}
+			if (hashes &lt; totalHashesDesired) {
+				for (let badge of warning_badges) {
+					if ((badge.totalHashes + hashes) &lt;= totalHashesDesired) {
+						selected_badges.push(badge)
+						hashes += badge.totalHashes
+					}
+				}
+			}
+
+			if (selected_badges.length > 0)
+				return selected_badges
+		}
+
+		if (warning_badges.length > 0) {
+			let cutoffs = []
+			let low_balances = []
+			for (let badge of warning_badges) {
+				if (badge.status.type === LOW_BALANCE) {
+					low_balances.push(badge)
+				} else if (badge.type === CUTOFF) {
+					cutoffs.push(badge)
+				}
+			}
+
+			let selected_badges = []
+			let hashes = 0;
+
+			for (let badge of low_balances) {
+				if ((badge.totalHashesTH + hashes) &lt;= totalHashesDesired) {
+					hashes += badge.limit
+					selected_badges.push(badge)
+				}
+			}
+
+			return selected_badges
+		}
+	}
+
+	/**
+	 * Manual rent based an amount of hashrate for a period of time
+	 * @param {Object} options - The Options for the rental operation
+	 * @param {Number} options.hashrate - The amount of Hashrate you wish to rent
+	 * @param {Number} options.duration - The duration (IN HOURS) that you wish to rent hashrate for
+	 * @param {Function} [options.rentSelector] - This function runs to let the user decide which rent option to go for. If no func is passed, will attempt to pick best possible rent opt.
+	 * @return {Promise&lt;Object>} Returns a Promise that will resolve to an Object containing info about the rental made
+	 */
+	async rent(options) {
+		if (!this.rental_providers || this.rental_providers.length === 0) {
+			return {
+				status: ERROR,
+				success: false,
+				type: "NO_RENTAL_PROVIDERS",
+				message: "Rent Cancelled, no RentalProviders found to rent from"
+			}
+		}
+
+		//preprocess
+		let preprocess;
+		try {
+			preprocess = await this.rentPreprocess(options)
+		} catch (err) {
+			return {status: ERROR, success: false, message: `Failed to get prepurchase_info`, error: err}
+		}
+
+		if (preprocess.status === ERROR) {
+			return {status: ERROR, success: false, message: 'Error in rent preprocess', preprocess}
+		}
+
+		if (preprocess.badges === []) {
+			return {status: ERROR, success: false, message: 'Preprocess found no available renting options', preprocess}
+		}
+
+		//confirm/select
+		let badges = preprocess.badges
+		if (options.rentSelector) {
+			let selector = await options.rentSelector(preprocess, options)
+			if (!selector.confirm) {
+				return {success: false, message: selector.message, status: WARNING}
+			}
+			badges = selector.badges
+		} else {
+			badges = await this.rentSelector(preprocess, options)
+		}
+
+
+		if (!badges || (Array.isArray(badges) &amp;&amp; badges.length === 0)) {
+			return {status: 'ERROR', message: 'No rent options found after rentSelector fn'}
+		}
+		// return {status: 'WARNING', message: "TESTING"}
+
+		//rent
+		let rentals = []
+		if (!Array.isArray(badges))
+			badges = [badges]
+		for (let badge of badges) {
+			let rentalReturn = await badge.provider.rent(badge)
+			for (let rental of rentalReturn) {
+				rentals.push(rental)
+			}
+		}
+		let status = NORMAL
+		let message = 'Rent Successful'
+		let successfulRentals = 0
+		let unsuccessfulRentals = 0
+		for (let rental of rentals) {
+			if (rental.success) {
+				successfulRentals++
+			} else unsuccessfulRentals++
+		}
+		if (unsuccessfulRentals > 0 &amp;&amp; successfulRentals > 0) {
+			status = WARNING
+			message = 'Not all rentals were successful'
+		}
+		if (unsuccessfulRentals >= 0 &amp;&amp; successfulRentals === 0) {
+			status = ERROR
+			message = 'Failed to rent'
+		}
+
+		let amount = 0
+		let limit = 0
+		let duration = 0
+
+		let limits = []
+		let durations = []
+		for (let rental of rentals) {
+			if (rental.success) {
+				if (rental.cutoff) {
+					this.cutoffRental(rental.id, rental.uid, options.duration)
+					limits.push(rental.limit)
+					limit += rental.limit
+					duration += rental.status.desiredDuration
+					durations.push(rental.status.desiredDuration)
+					amount += rental.status.cutoffCost
+				} else {
+					limits.push(rental.limit)
+					limit += rental.limit
+					duration += options.duration
+					durations.push(options.duration)
+					amount += rental.amount
+				}
+			}
+		}
+
+		let weights = []
+		let weightedSum = 0
+		for (let i = 0; i &lt; limits.length; i++) {
+			weights.push(limits[i] * durations[i])
+		}
+		for (let weight of weights) {
+			weightedSum += weight
+		}
+		let weightedLimit = weightedSum / duration
+
+		//receipt
+		return {
+			status,
+			message,
+			total_cost: amount,
+			average_hashrate_rented: weightedLimit,
+			average_duration: duration / rentals.length,
+			average_price: toNiceHashPrice(amount, weightedLimit, duration / rentals.length),
+			hashrateTH_desired: options.hashrate / 1000 / 1000,
+			duration_desired: options.duration,
+			rentals,
+			type: RECEIPT,
+		}
+	}
+
+	/**
+	 * Cutoff a NiceHash rental at a desired time
+	 * @param {string|number} id - id of the rental
+	 * @param {string|number} uid - the uid of the rental provider
+	 * @param {number} duration - the amount of time to let the rental run
+	 * @returns {void}
+	 */
+	cutoffRental(id, uid, duration) {
+		console.log("Cutoff rental, GO!")
+		let cutoffTime = Date.now() + duration * 60 * 60 * 1000
+		let check = async () => {
+			console.log("checking time")
+			if (Date.now() >= cutoffTime) {
+				let _provider
+				for (let provider of this.rental_providers) {
+					if (provider.getUID() === uid) {
+						_provider = provider
+						break
+					}
+				}
+				let cancel = await _provider.cancelRental(id)
+				if (cancel.success) {
+					//ToDo: Write to log
+					if (!this.cancellations) {
+						this.cancellations = []
+					}
+					console.log(`Cancelled Order ${id}`, cancel)
+					this.cancellations.push(cancel)
+				} else {
+					if (cancel.errorType === 'NETWORK') {
+						//ToDo: Write to log
+						console.log("network error", cancel)
+						setTimeout(check, 60 * 1000)
+					}
+					if (cancel.errorType === 'NICEHSAH') {
+						//ToDo: Write to log
+						console.log(`Failed to cancel order: ${id}`, cancel)
+						if (!this.cancellations) {
+							this.cancellations = []
+						}
+						this.cancellations.push(cancel)
+					}
+				}
+			} else {
+				setTimeout(check, 60 * 1000)
+			}
+		}
+		setTimeout(check, 60 * 1000)
+	}
+}
+
+export default AutoRenter
+</code></pre>
+  </article>
+</section>
+
+    
+
+
+  </div>
+
+  <br class="clear">
+
+  <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a>
+  </footer>
+
+  <script src="scripts/linenumber.js"></script>
+  <script src="scripts/pagelocation.js"></script>
+
+  
+  
+</body>
+</html>
